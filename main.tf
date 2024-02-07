@@ -1,12 +1,14 @@
-provider "google" {
-  project = "de0360-sbx-data-academy-dr"
-  region  = "europe-west3"
-}
+# [START google_storage_bucket] 
+
+
+variable project {} 
+variable name {} 
+variable location {} 
 
 resource "google_compute_instance" "vm_instance" {
-  name         = var.instance_terraform2
-  machine_type = var.e2_micro
-  zone         = "europe-west3"
+  project      = var.project
+  name         = var.project 
+  location     =var.location
   
   boot_disk {
     initialize_params {
@@ -18,4 +20,4 @@ resource "google_compute_instance" "vm_instance" {
     network = "projects/de0360-2-sbx-net-spoke-1/global/networks/sbx-spoke-0"
     access_config {}
   }
-}
+# [END google_storage_bucket] 
