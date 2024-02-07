@@ -15,7 +15,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   network_interface {
-    network = "sbx-spoke-0"  # Beispiel-Netzwerk, bitte anpassen
+    network = "projects/de0360-2-sbx-net-spoke-1/global/networks/sbx-spoke-0"  # Beispiel-Netzwerk, bitte anpassen
     access_config {}
   }
 }
