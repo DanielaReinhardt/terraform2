@@ -4,6 +4,7 @@ variable machine_type {}
 variable zone {}
 variable image {}
 variable network {}
+variable subnetwork {}
 
 resource "google_compute_instance" "test_instance" {
   project      = var.project
