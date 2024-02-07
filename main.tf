@@ -1,15 +1,24 @@
-# [START google_storage_bucket] 
-
-
-variable project {} 
-variable name {} 
-variable location {} 
+variable project {}
+variable name {}
+variable machine_type {}
+variable zone {}
+variable image {}
+variable network {}
 
 resource "google_compute_instance" "test_instance" {
   project      = var.project
-  name         = var.project 
-  machine_type = "e2-micro"
-  zone         = "europe-west3"
-  
+  name         = var.name
+  machine_type = var.machine_type
+  zone         = var.zone
+
+  boot_disk {
+    initialize_params {
+      image = var.image
+    }
   }
-# [END google_storage_bucket] 
+
+  network_interface {
+    network = var.network
+    access_config {}
+  }
+}
