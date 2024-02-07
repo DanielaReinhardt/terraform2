@@ -1,5 +1,5 @@
 project     = "de0360-sbx-data-academy-dr" 
 
-name        = "de0360-sbx-data-academy-dr_test_bucket" 
+name        = "test_instance" 
 
 location    = "EUROPE-WEST3"
