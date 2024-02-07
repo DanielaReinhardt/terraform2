@@ -5,10 +5,11 @@ variable project {}
 variable name {} 
 variable location {} 
 
-resource "google_compute_instance" "test_bucket" {
+resource "google_compute_instance" "test_instance" {
   project      = var.project
   name         = var.project 
-  location     = var.location
+  machine_type = "e2-micro"
+  zone         = "europe-west3"
   
   }
 # [END google_storage_bucket] 
